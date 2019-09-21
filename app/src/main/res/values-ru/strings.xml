@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="HelloWorld">Привет, Мир!</string>
+    <string name="GoodMorning">Доброе утро!</string>
+    <string name="GoodDay">Добрый день</string>
+    <string name="GoodEvening">Добрый вечер</string>
+    <string name="clickForExit">Нажмите еще раз, что бы выйти</string>
+    <string name="weather">Погода</string>
+</resources>
