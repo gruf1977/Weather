@@ -1,9 +1,31 @@
 <resources>
     <string name="app_name" translatable="false">Weather</string>
+
     <string name="weather">Weather</string>
+    <string name="weatherIn">Weather in</string>
     <string name="HelloWorld">Hello World!</string>
     <string name="GoodMorning">Good Morning</string>
     <string name="GoodDay">Good Day</string>
     <string name="GoodEvening">Good Evening</string>
     <string name="clickForExit">Press again to exit</string>
+    <string name="lblNameCity">City</string>
+    <string name="textNameCity">City</string>
+    <string name="InputCity">Input City</string>
+    <string name="temperature">Temperature</string>
+    <string name="rainfall">Rainfall</string>
+    <string name="humidity">Humidity</string>
+    <string name="atmPressure">Atm. pressure</string>
+    <string name="windSpeed">Wind speed</string>
+
+    <string name="humiditySymbol">(%)</string>
+    <string name="atmPressureSymbol">(mm./m.c.)</string>
+    <string name="windSpeedSymbol">(m./sec.)</string>
+
+    <string name="rainfallValue" translatable="false">rain</string>
+    <string name="temperatureValue" translatable="false">-15</string>
+    <string name="humidityValue" translatable="false">20</string>
+    <string name="atmPressureValue" translatable="false">730</string>
+    <string name="windSpeedValue" translatable="false">30</string>
+
+
 </resources>

@@ -6,4 +6,18 @@
     <string name="GoodEvening">Добрый вечер</string>
     <string name="clickForExit">Нажмите еще раз, что бы выйти</string>
     <string name="weather">Погода</string>
+    <string name="weatherIn">Погода в </string>
+    <string name="lblNameCity">Город</string>
+    <string name="textNameCity">Город</string>
+    <string name="temperature">Температура :</string>
+    <string name="InputCity">Введите город</string>
+
+    <string name="humiditySymbol">(%)</string>
+    <string name="atmPressureSymbol">(мм./рт.c.)</string>
+    <string name="windSpeedSymbol">(м./сек.)</string>
+
+    <string name="rainfall" translatable="false">Осадки</string>
+    <string name="humidity" translatable="false">Влажность</string>
+    <string name="atmPressure" translatable="false">Давление</string>
+    <string name="windSpeed" translatable="false">Скорость ветра</string>
 </resources>
