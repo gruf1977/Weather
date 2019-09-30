@@ -6,7 +6,7 @@
     <string name="GoodEvening">Добрый вечер</string>
     <string name="clickForExit">Нажмите еще раз, что бы выйти</string>
     <string name="weather">Погода</string>
-    <string name="weatherIn">Погода в </string>
+    <string name="weatherIn">Погода в г.</string>
     <string name="lblNameCity">Город</string>
     <string name="textNameCity">Город</string>
     <string name="temperature">Температура :</string>
@@ -20,4 +20,16 @@
     <string name="humidity" translatable="false">Влажность</string>
     <string name="atmPressure" translatable="false">Давление</string>
     <string name="windSpeed" translatable="false">Скорость ветра</string>
+
+    <string-array name="cities">
+        <item>Москва</item>
+        <item>Самара</item>
+        <item>Волгоград</item>
+        <item>Саратов</item>
+        <item>Воронеж</item>
+        <item>Иркутск</item>
+        <item>Новосибирск</item>
+        <item>Красноярск</item>
+        <item>Владивосток</item>
+    </string-array>
 </resources>

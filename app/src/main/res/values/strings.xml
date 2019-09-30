@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">Weather</string>
 
     <string name="weather">Weather</string>
-    <string name="weatherIn">Weather in</string>
+    <string name="weatherIn">Weather in \u0020</string>
     <string name="HelloWorld">Hello World!</string>
     <string name="GoodMorning">Good Morning</string>
     <string name="GoodDay">Good Day</string>
@@ -16,7 +16,6 @@
     <string name="humidity">Humidity</string>
     <string name="atmPressure">Atm. pressure</string>
     <string name="windSpeed">Wind speed</string>
-
     <string name="humiditySymbol">(%)</string>
     <string name="atmPressureSymbol">(mm./m.c.)</string>
     <string name="windSpeedSymbol">(m./sec.)</string>
@@ -26,6 +25,17 @@
     <string name="humidityValue" translatable="false">20</string>
     <string name="atmPressureValue" translatable="false">730</string>
     <string name="windSpeedValue" translatable="false">30</string>
+    <string-array name="cities">
+        <item>Moscow</item>
+        <item>Samara</item>
+        <item>Volgograd</item>
+        <item>Saratov</item>
+        <item>Voronezh</item>
+        <item>Irkutsk</item>
+        <item>Novosibirsk</item>
+        <item>Krasnoyarsk</item>
+        <item>Vladivostok</item>
+    </string-array>
 
 
 </resources>

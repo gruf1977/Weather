@@ -60,27 +60,7 @@
 
         </TableRow>
 
-        <TableRow
-            android:id="@+id/tblRowAtmPressure"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:visibility="gone">
 
-            <TextView
-                android:id="@+id/textAtmPressure"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="@string/atmPressure"
-                />
-
-            <TextView
-                android:id="@+id/atmPressureValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""/>
-        </TableRow>
 
         <TableRow
             android:id="@+id/tblRowHumidity"
@@ -88,11 +68,17 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:visibility="gone">
-
+            <LinearLayout
+                android:id="@+id/linearLayouHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
             <TextView
                 android:id="@+id/textHumidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="end"
                 android:text="@string/humidity"
                 />
 
@@ -102,8 +88,35 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 />
+            </LinearLayout>
         </TableRow>
+        <TableRow
+            android:id="@+id/tblRowAtmPressure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone">
+            <LinearLayout
+                android:id="@+id/linearLayouAtmPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textAtmPressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/atmPressure"
+                    />
 
+                <TextView
+                    android:id="@+id/atmPressureValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+            </LinearLayout>
+        </TableRow>
         <TableRow
 
             android:id="@+id/tblRowWindSpeed"
@@ -111,12 +124,17 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:visibility="gone">
-
+            <LinearLayout
+                android:id="@+id/linearWindSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
             <TextView
                 android:id="@+id/textWindSpeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:gravity="end"
                 android:text="@string/windSpeed"
                  />
 
@@ -126,7 +144,7 @@
                 android:layout_height="wrap_content"
 
                 android:text=""/>
-
+            </LinearLayout>
         </TableRow>
     </TableLayout>
 

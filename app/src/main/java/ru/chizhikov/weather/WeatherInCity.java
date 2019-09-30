@@ -18,7 +18,7 @@ public class WeatherInCity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(LOG_TAG, "WeatherInCity: onCreate()");
         setContentView(R.layout.activity_weather_in_city);
-        String weather_in_city = getResources().getString(R.string.weatherIn) + " " + getIntent().getStringExtra("nameCity");
+        String weather_in_city = getResources().getString(R.string.weatherIn) + getIntent().getStringExtra("nameCity");
         TextView textViewWeather = findViewById(R.id.textViewWeather);
         textViewWeather.setText(weather_in_city);
         Weather weather = (Weather) Objects.requireNonNull(getIntent().getExtras()).getSerializable("weather");
@@ -50,42 +50,6 @@ public class WeatherInCity extends AppCompatActivity {
                 windSpeedValue.setText(": " + weather.getWind_speed() + getResources().getString(R.string.windSpeedSymbol));
             }
         }
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(LOG_TAG, "WeatherInCity: onRestart()");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(LOG_TAG, "WeatherInCity: onStart()");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(LOG_TAG, "WeatherInCity: onResume()");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(LOG_TAG, "WeatherInCity: onPause()");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(LOG_TAG, "WeatherInCity: onStop()");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(LOG_TAG, "WeatherInCity: onDestroy()");
     }
 }
 
