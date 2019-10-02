@@ -9,7 +9,6 @@ public class Weather implements Serializable {
     private int humidity;
     private int windSpeed;
 
-
     Weather(String rainfall, int temperature, int atmPressure, int humidity, int windSpeed) {
         this.rainfall = rainfall;
         this.temperature = temperature;

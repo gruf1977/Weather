@@ -1,152 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainLinear">
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/MainFon"/>
+<LinearLayout
+    style="@style/MainLinear">
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
-
+        style="@style/MainLinearForMainText">
         <TextView
             android:id="@+id/textViewWeather"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="@string/weatherIn"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
+            style="@style/MainTextWeather"  />
     </LinearLayout>
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
+            style="@style/TableRowParamWeather">
             <TextView
                 android:id="@+id/temperatureValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text=""
-                android:textSize="36sp" />
+                style="@style/TextViewTemperatureValue" />
         </TableRow>
-
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
+            style="@style/TableRowParamWeather">
             <TextView
                 android:id="@+id/rainfallValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=""
-                android:textSize="24sp"
-                android:gravity="center"/>
-
+                style="@style/TextViewRainfallValue"/>
         </TableRow>
-
-
-
         <TableRow
             android:id="@+id/tblRowHumidity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:visibility="gone">
+            style="@style/TableParamWeather">
             <LinearLayout
                 android:id="@+id/linearLayouHumidity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                style="@style/LinearParamWeather" >
             <TextView
                 android:id="@+id/textHumidity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="@string/humidity"
-                />
-
+                style="@style/TextViewParamWeather"
+                android:text="@string/humidity"/>
             <TextView
                 android:id="@+id/humidityValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                />
+                style="@style/TextViewParamWeatherValue"/>
             </LinearLayout>
         </TableRow>
         <TableRow
             android:id="@+id/tblRowAtmPressure"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:visibility="gone">
+            style="@style/TableParamWeather">
             <LinearLayout
-                android:id="@+id/linearLayouAtmPressure"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:id="@+id/linearLayoutAtmPressure"
+                style="@style/LinearParamWeather" >
                 <TextView
                     android:id="@+id/textAtmPressure"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:text="@string/atmPressure"
-                    />
-
+                    style="@style/TextViewParamWeather"
+                    android:text="@string/atmPressure"/>
                 <TextView
                     android:id="@+id/atmPressureValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""/>
+                    style="@style/TextViewParamWeatherValue"/>
             </LinearLayout>
         </TableRow>
         <TableRow
-
             android:id="@+id/tblRowWindSpeed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:visibility="gone">
+            style="@style/TableParamWeather">
             <LinearLayout
                 android:id="@+id/linearWindSpeed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                style="@style/LinearParamWeather" >
             <TextView
                 android:id="@+id/textWindSpeed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="@string/windSpeed"
-                 />
-
+                style="@style/TextViewParamWeather"
+                android:text="@string/windSpeed"/>
             <TextView
                 android:id="@+id/windSpeedValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text=""/>
+                style="@style/TextViewParamWeatherValue"/>
             </LinearLayout>
         </TableRow>
     </TableLayout>
-
-
 </LinearLayout>
+</RelativeLayout>

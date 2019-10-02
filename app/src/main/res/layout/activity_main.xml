@@ -1,81 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainLinear">
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/MainFon"/>
+<LinearLayout
+    style="@style/MainLinear">
     <LinearLayout
         android:id="@+id/linearLayout0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
-
+        style="@style/MainLinearForMainText">
         <TextView
             android:id="@+id/textViewWeather"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="@string/weather"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            style="@style/MainTextWeather"/>
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp">
-
+        style="@style/LinearMainSting">
         <Spinner
             android:id="@+id/cities"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            />
-
+            android:layout_height="20dp"/>
     </LinearLayout>
-
-
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
+        style="@style/LinearMainSting"
         android:orientation="horizontal">
-
         <CheckBox
             android:id="@+id/checkBoxAtmPressure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/CheckBox"
             android:text="@string/atmPressure" />
-
         <CheckBox
             android:id="@+id/checkBoxHumidity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/CheckBox"
             android:text="@string/humidity" />
-
         <CheckBox
             android:id="@+id/checkBoxWindSpeed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/CheckBox"
             android:text="@string/windSpeed" />
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="10dp">
-
         <Button
             android:id="@+id/btnOk"
             android:layout_width="match_parent"
@@ -83,20 +50,16 @@
             android:layout_gravity="center"
             android:text="@android:string/ok" />
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal|center_vertical">
-
         <TextView
             android:id="@+id/greetingTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="@string/HelloWorld"
-            android:textSize="20sp" />
+            style="@style/TextViewTemperatureValue"/>
     </LinearLayout>
 </LinearLayout>
+</RelativeLayout>
