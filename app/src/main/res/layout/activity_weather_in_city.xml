@@ -1,79 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MainLinear">
-    <ImageView
-        android:id="@+id/imageView"
-        style="@style/MainFon"/>
-<LinearLayout
-    style="@style/MainLinear">
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        style="@style/MainLinearForMainText">
-        <TextView
-            android:id="@+id/textViewWeather"
-            android:text="@string/weatherIn"
-            style="@style/MainTextWeather"  />
-    </LinearLayout>
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow
-            style="@style/TableRowParamWeather">
-            <TextView
-                android:id="@+id/temperatureValue"
-                style="@style/TextViewTemperatureValue" />
-        </TableRow>
-        <TableRow
-            style="@style/TableRowParamWeather">
-            <TextView
-                android:id="@+id/rainfallValue"
-                style="@style/TextViewRainfallValue"/>
-        </TableRow>
-        <TableRow
-            android:id="@+id/tblRowHumidity"
-            style="@style/TableParamWeather">
-            <LinearLayout
-                android:id="@+id/linearLayouHumidity"
-                style="@style/LinearParamWeather" >
-            <TextView
-                android:id="@+id/textHumidity"
-                style="@style/TextViewParamWeather"
-                android:text="@string/humidity"/>
-            <TextView
-                android:id="@+id/humidityValue"
-                style="@style/TextViewParamWeatherValue"/>
-            </LinearLayout>
-        </TableRow>
-        <TableRow
-            android:id="@+id/tblRowAtmPressure"
-            style="@style/TableParamWeather">
-            <LinearLayout
-                android:id="@+id/linearLayoutAtmPressure"
-                style="@style/LinearParamWeather" >
-                <TextView
-                    android:id="@+id/textAtmPressure"
-                    style="@style/TextViewParamWeather"
-                    android:text="@string/atmPressure"/>
-                <TextView
-                    android:id="@+id/atmPressureValue"
-                    style="@style/TextViewParamWeatherValue"/>
-            </LinearLayout>
-        </TableRow>
-        <TableRow
-            android:id="@+id/tblRowWindSpeed"
-            style="@style/TableParamWeather">
-            <LinearLayout
-                android:id="@+id/linearWindSpeed"
-                style="@style/LinearParamWeather" >
-            <TextView
-                android:id="@+id/textWindSpeed"
-                style="@style/TextViewParamWeather"
-                android:text="@string/windSpeed"/>
-            <TextView
-                android:id="@+id/windSpeedValue"
-                style="@style/TextViewParamWeatherValue"/>
-            </LinearLayout>
-        </TableRow>
-    </TableLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       style="@style/MainLinear">
+    <TextView
+        android:id="@+id/textViewWeather"
+        android:text="@string/weatherIn"
+        style="@style/MainTextWeather" />
+    <TextView
+        android:id="@+id/temperatureValue"
+        style="@style/TextViewTemperatureValue" />
+    <TextView
+        android:id="@+id/rainfallValue"
+        style="@style/TextViewRainfallValue" />
+    <TextView
+        android:id="@+id/humidity"
+        style="@style/TextViewParamWeather"
+        android:text="@string/humidity" />
+    <TextView
+        android:id="@+id/atmPressure"
+        style="@style/TextViewParamWeather"
+        android:text="@string/atmPressure"/>
+    <TextView
+        android:id="@+id/windSpeed"
+        style="@style/TextViewParamWeather"
+        android:text="@string/windSpeed"/>
 </LinearLayout>
-</RelativeLayout>

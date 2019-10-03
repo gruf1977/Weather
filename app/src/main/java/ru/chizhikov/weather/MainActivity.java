@@ -29,26 +29,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(LOG_TAG, "MainActivity: onCreate()");
         setContentView(R.layout.activity_main);
         initGreetingText();
+        initViews();
+        createSpinner();
+    }
+    private void initViews() {
         btnOk = findViewById(R.id.btnOk);
         btnOk.setOnClickListener(this);
-
         checkBoxAtmPressure = findViewById(R.id.checkBoxAtmPressure);
         checkBoxHumidity = findViewById(R.id.checkBoxHumidity);
         checkBoxWindSpeed = findViewById(R.id.checkBoxWindSpeed);
         cities = getResources().getStringArray(R.array.cities);
-
+    }
+    private void createSpinner() {
         Spinner spinner = findViewById(R.id.cities);
-        // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cities);
-        // Определяем разметку для использования при выборе элемента
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, cities);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Применяем адаптер к элементу spinner
         spinner.setAdapter(adapter);
-        AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
+        AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView
+                .OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Получаем выбранный объект
-              nameCity = (String)parent.getItemAtPosition(position);
+                nameCity = (String)parent.getItemAtPosition(position);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -60,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView greetingTextView = findViewById(R.id.greetingTextView);
         String text = new GreetingsBuilder().getGreetings(getApplicationContext());
         greetingTextView.setText(text); }
-    //подтверждение выхода из приложения
     @Override
     public void onBackPressed(){
+        //подтверждение выхода из приложения
         if (backPressedTime +2000 > System.currentTimeMillis()){
             backToast.cancel();
             super.onBackPressed();
@@ -84,21 +86,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Integer.parseInt(getResources().getString(R.string.atmPressureValue)),
                 Integer.parseInt(getResources().getString(R.string.humidityValue)),
                 Integer.parseInt(getResources().getString(R.string.windSpeedValue)));
-            Intent intent = new Intent(this, WeatherInCity.class);
-            intent.putExtra("nameCity", nameCity);
-            intent.putExtra("weather", weather);
-            intent.putExtra("checkAtmPressure", checkBoxAtmPressure.isChecked());
-            intent.putExtra("checkHumidity", checkBoxHumidity.isChecked());
-            intent.putExtra("checkWindSpeed", checkBoxWindSpeed.isChecked());
-            Log.d(LOG_TAG, "MainActivity intent: " + "\n" +
-                    "nameCity: " + nameCity + "\n" +
-                    "weather: " + weather.toString() + "\n" +
-                    "checkAtmPressure: " + checkBoxAtmPressure.isChecked() + ", " +
-                    "checkHumidity: " + checkBoxHumidity.isChecked() + ", " +
-                    "checkWindSpeed: " + checkBoxWindSpeed.isChecked());
-            startActivity(intent);
-        }
+        createActivityWeatherInCity(weather);
     }
+    private void createActivityWeatherInCity(Weather weather) {
+        Intent intent = new Intent(this, WeatherInCity.class);
+        intent.putExtra("nameCity", nameCity);
+        intent.putExtra("weather", weather);
+        intent.putExtra("checkAtmPressure", checkBoxAtmPressure.isChecked());
+        intent.putExtra("checkHumidity", checkBoxHumidity.isChecked());
+        intent.putExtra("checkWindSpeed", checkBoxWindSpeed.isChecked());
+        startActivity(intent);
+    }
+}
 
 
 
