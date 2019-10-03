@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MainLinear">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/MainLinear">
     <ImageView
         android:id="@+id/imageView"
         style="@style/MainFon"/>
@@ -24,7 +23,7 @@
     </LinearLayout>
     <LinearLayout
         style="@style/LinearMainSting"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <CheckBox
             android:id="@+id/checkBoxAtmPressure"
             style="@style/CheckBox"
@@ -58,7 +57,7 @@
         android:gravity="center_horizontal|center_vertical">
         <TextView
             android:id="@+id/greetingTextView"
-            android:text="@string/HelloWorld"
+            android:text=""
             style="@style/TextViewTemperatureValue"/>
     </LinearLayout>
 </LinearLayout>
