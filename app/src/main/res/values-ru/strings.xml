@@ -11,25 +11,11 @@
     <string name="textNameCity">Город</string>
     <string name="temperature">Температура :</string>
     <string name="InputCity">Введите город</string>
-
     <string name="humiditySymbol">(%)</string>
     <string name="atmPressureSymbol">(мм./рт.c.)</string>
     <string name="windSpeedSymbol">(м./сек.)</string>
-
     <string name="rainfall" translatable="false">Осадки</string>
     <string name="humidity" translatable="false">Влажность</string>
     <string name="atmPressure" translatable="false">Давление</string>
     <string name="windSpeed" translatable="false">Скорость ветра</string>
-
-    <string-array name="cities">
-        <item>Москва</item>
-        <item>Самара</item>
-        <item>Волгоград</item>
-        <item>Саратов</item>
-        <item>Воронеж</item>
-        <item>Иркутск</item>
-        <item>Новосибирск</item>
-        <item>Красноярск</item>
-        <item>Владивосток</item>
-    </string-array>
 </resources>

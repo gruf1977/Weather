@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MainLinear" >
-        <TextView
-            android:id="@+id/textViewWeather"
-            style="@style/MainTextWeather"
-            android:text="@string/weather" />
-        <Spinner
-            android:id="@+id/cities"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp" />
-        <CheckBox
-            android:id="@+id/checkBoxAtmPressure"
-            style="@style/CheckBox"
-            android:text="@string/atmPressure" />
-        <CheckBox
-            android:id="@+id/checkBoxHumidity"
-            style="@style/CheckBox"
-            android:text="@string/humidity" />
-        <CheckBox
-            android:id="@+id/checkBoxWindSpeed"
-            style="@style/CheckBox"
-            android:text="@string/windSpeed" />
-        <Button
-            android:id="@+id/btnOk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@android:string/ok" />
-        <TextView
-            android:id="@+id/greetingTextView"
-            style="@style/TextViewNiceDay"
-            android:layout_weight="40"
-            android:text="" />
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MainLinear"
+    android:orientation="vertical">
+    <fragment
+        android:id="@+id/list_of_sities"
+        android:name="ru.chizhikov.weather.fragments.ListOfCities"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_list_cities"/>
 </LinearLayout>

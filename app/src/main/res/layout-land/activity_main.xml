@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/MainLinear">
+    style="@style/MainLinear"
+    android:orientation="horizontal">
+    <fragment
+        android:id="@+id/list_of_sities"
+        android:name="ru.chizhikov.weather.fragments.ListOfCities"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_list_cities"/>
     <fragment
         android:id="@+id/weather_value"
         android:name="ru.chizhikov.weather.fragments.WeatherValue"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         tools:layout="@layout/fragment_weather_value"/>
