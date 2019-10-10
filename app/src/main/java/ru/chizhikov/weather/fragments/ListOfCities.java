@@ -52,9 +52,9 @@ public class ListOfCities extends Fragment {
     public void onResume() {
         super.onResume();
         if (isLandscapeOrientation){
-           Objects.requireNonNull(listener).onPositionSelected(numberPosition);
+            Objects.requireNonNull(listener).onPositionSelected(numberPosition);
         }
-     }
+    }
     private void initViews(View view) {
         listView = view.findViewById(R.id.cities_list_view);
         emptyTextView = view.findViewById(R.id.cities_list_empty_view);

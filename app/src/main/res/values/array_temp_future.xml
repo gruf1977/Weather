@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pictures">
+        <item>@drawable/rain</item>
+        <item>@drawable/snow</item>
+        <item>@drawable/sunny</item>
+        <item>@drawable/warm</item>
+        <item>@drawable/hot</item>
+        <item>@drawable/wind</item>
+        <item>@drawable/pasmur</item>
+        <item>@drawable/cold</item>
+    </array>
+    <string-array name="temper_future">
+        <item>+5</item>
+        <item>-20</item>
+        <item>+10</item>
+        <item>+20</item>
+        <item>+36</item>
+        <item>+12</item>
+        <item>+5</item>
+        <item>-30</item>
+    </string-array>
+</resources>

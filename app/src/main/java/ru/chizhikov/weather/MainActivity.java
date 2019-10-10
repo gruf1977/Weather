@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-
 import ru.chizhikov.weather.fragments.WeatherValue;
 
 public class  MainActivity extends AppCompatActivity implements OnSelectedPositionCity {

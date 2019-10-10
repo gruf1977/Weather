@@ -24,4 +24,5 @@
     <string name="atmPressureValue" translatable="false">730</string>
     <string name="windSpeedValue" translatable="false">30</string>
     <string name="empty" translatable="false">Empty</string>
+    <string name="item" translatable="false">Item</string>
 </resources>

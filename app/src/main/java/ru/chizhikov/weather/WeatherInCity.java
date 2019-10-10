@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import java.util.Objects;
-
 import ru.chizhikov.weather.fragments.WeatherValue;
 
 public class WeatherInCity extends AppCompatActivity {
