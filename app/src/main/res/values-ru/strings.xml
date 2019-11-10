@@ -1,21 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="HelloWorld">Привет, Мир!</string>
-    <string name="GoodMorning">Доброе утро!</string>
-    <string name="GoodDay">Добрый день</string>
-    <string name="GoodEvening">Добрый вечер</string>
     <string name="clickForExit">Нажмите еще раз, что бы выйти</string>
     <string name="weather">Погода</string>
     <string name="weatherIn">Погода в г.</string>
-    <string name="lblNameCity">Город</string>
-    <string name="textNameCity">Город</string>
     <string name="temperature">Температура :</string>
-    <string name="InputCity">Введите город</string>
     <string name="humiditySymbol">(%)</string>
     <string name="atmPressureSymbol">(мм./рт.c.)</string>
     <string name="windSpeedSymbol">(м./сек.)</string>
-    <string name="rainfall" translatable="false">Осадки</string>
-    <string name="humidity" translatable="false">Влажность</string>
-    <string name="atmPressure" translatable="false">Давление</string>
-    <string name="windSpeed" translatable="false">Скорость ветра</string>
+    <string name="humidity">Влажность: \u0020</string>
+    <string name="atmPressure">Давление: \u0020</string>
+    <string name="windSpeed">Ветер: \u0020</string>
+    <string name="Check_city">Выбран город:</string>
+    <string name="close_app">Закрыть приложение?</string>
+    <string name="close">Закрыть</string>
+    <string name="check_city">Выберите город</string>
+    <string name="change_city">Выбрать город?</string>
+    <string name="about">Об авторе</string>
+    <string name="place_not_found">Город не найден</string>
+    <string name="uri">ru</string>
+    <string name="Err">Данные еще не подвезли…</string>
+    <string name="in_your_city">в твоем городе</string>
+    <string name="settings">Настройки</string>
+    <string name="home">На главную</string>
+    <string name="about_app">О приложении</string>
+    <string name="communicate">Контакты:</string>
+    <string name="message_for_creator">Письмо разработчику</string>
+    <string name="contacts_creator">Контакты с разработчиком</string>
+    <string name="redactor_list_cities">Редактор списка городов</string>
+    <string name="delete">Удалить</string>
+    <string name="refresh">Обновить</string>
+    <string name="add">Добавить</string>
+    <string name="added">Добавлен</string>
+    <string name="edit">Редактировать</string>
+    <string name="edited">Отредактирован</string>
+    <string name="yes">Да</string>
+    <string name="removed">удален</string>
+    <string name="remove">Удалить</string>
+    <string name="update">Обновить</string>
+    <string name="city">Город</string>
+    <string name="cancel">Отмена</string>
+    <string name="err_empty_list">Список не может быть пустым</string>
+    <string name="weather_in_your_phone">Погода в твоем телефоне</string>
+    <string name="sensor_is_not_detected">Сенсор не обнаружен</string>
+    <string name="contact_with_creator">Написать разработчику</string>
+    <string name="name">Имя</string>
+    <string name="email">Email</string>
+    <string name="message">Сообщение</string>
+    <string name="it_is_not_name">Это не имя!</string>
+    <string name="it_is_not_email">Это не email!</string>
+    <string name="it_is_not_message">Это не сообщение!</string>
+    <string name="add_city">Добавить город</string>
+    <string name="it_is_wrong_name_city">Это не название города!</string>
+    <string name="send">Отправить</string>
+    <string name="send_email_title">Отправка mail…</string>
+    <string name="check_email_data">Проверьте правильность введенных данных</string>
+    <string name="find_not_place">Простите… \n
+        Не нашла ни место, ни погоду. \n
+        Проверьте название местности.</string>
+    <string name="no_internet">Нет подключения к интернет</string>
+    <string name="find_place">Кручу глобус ищу… \n  погоду в </string>
+    <string name="about_app_text">Мы рады, что вы выбрали
+        наше приложение для анализа прогноза погоды.
+        Наше приложение транслирует информацию о погоде с сервиса OpenWeatherMap.\n
+        OpenWeatherMap это сеть частных метеостанций.
+        Сегодня это более 40 000 метеостанций по всему миру.</string>
 </resources>

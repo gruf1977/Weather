@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainLinear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp">
+        <TextView
+            android:id="@+id/text_about_name_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/about_app"
+            style="@style/MainTextWeather"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/text_about_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/TextViewParamWeather"
+            android:textSize="14sp"
+            android:visibility="visible"/>
+</LinearLayout>

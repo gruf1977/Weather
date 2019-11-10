@@ -1,32 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/MainLinear">
+
     <TextView
         android:id="@+id/textViewWeather"
         android:text="@string/weatherIn"
         style="@style/MainTextWeather"/>
+
     <TextView
-        android:id="@+id/temperatureValue"
-        style="@style/TextViewTemperatureValue"/>
+        android:id="@+id/textData"
+        style="@style/TextViewParamWeather"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imageWeather"
+            android:layout_height="40dp"
+            android:layout_width="40dp" />
+
+        <TextView
+            android:id="@+id/temperatureValue"
+            style="@style/TextViewTemperatureValue"/>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/rainfallValue"
         style="@style/TextViewRainfallValue"/>
+
     <TextView
         android:id="@+id/humidity"
         style="@style/TextViewParamWeather"
         android:text="@string/humidity"/>
+
     <TextView
         android:id="@+id/atmPressure"
         style="@style/TextViewParamWeather"
         android:text="@string/atmPressure"/>
+
     <TextView
         android:id="@+id/windSpeed"
         style="@style/TextViewParamWeather"
         android:text="@string/windSpeed"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"/>
 </LinearLayout>
 

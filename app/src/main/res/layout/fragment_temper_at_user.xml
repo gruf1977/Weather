@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainLinear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/text_Main_sensor"
+        android:text="@string/weather_in_your_phone"
+        style="@style/MainTextWeather"
+         android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/text_temperature_sensor"
+        style="@style/MainTextWeather"
+        android:text="@string/sensor_is_not_detected"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/text_humidity_sensor"
+        style="@style/MainTextWeather"
+        android:visibility="visible" />
+</LinearLayout>
