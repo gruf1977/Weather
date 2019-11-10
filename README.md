@@ -14,3 +14,7 @@
 
 Интернет: Retrofit, Rest.
 
+![](Screenshot_1573399994.png)
+![](Screenshot_1573399998.png)
+![](Screenshot_1573400008.png)
+![](Screenshot_1573400020.png)
