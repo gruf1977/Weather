@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pictures">
+        <item>@drawable/broken_clouds</item>
+        <item>@drawable/clear_sky</item>
+        <item>@drawable/drizzle</item>
+        <item>@drawable/few_clouds</item>
+        <item>@drawable/heavy_intensity_rain</item>
+        <item>@drawable/heavy_snow</item>
+        <item>@drawable/light_rain</item>
+        <item>@drawable/light_snow</item>
+        <item>@drawable/moderate_rain</item>
+        <item>@drawable/overcast_clouds</item>
+        <item>@drawable/shower_rain</item>
+        <item>@drawable/sleet</item>
+        <item>@drawable/smoke</item>
+        <item>@drawable/snow</item>
+        <item>@drawable/thunderstorm_with_light_rain</item>
+        <item>@drawable/very_heavy_rain</item>
+        <item>@drawable/scattered_clouds</item>
+        <item>@drawable/rain</item>
+        <item>@drawable/wind</item>
+    </array>
+</resources>
