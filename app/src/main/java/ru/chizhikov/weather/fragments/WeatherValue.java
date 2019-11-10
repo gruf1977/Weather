@@ -183,7 +183,7 @@ public class WeatherValue extends Fragment {
 
     private void renderWeather(WeatherRequestRestModel model) {
         tvTextData.setVisibility(View.VISIBLE);
-        tvTextData.setText(model.city.nameCity + " " +model.city.country);
+        tvTextData.setText(String.format("%s %s", model.city.nameCity, model.city.country));
         listEveryTimeOnDate = new ArrayList<>();
         data =  new ArrayList<>();
         int j = -1;
