@@ -14,6 +14,8 @@
 
 Интернет: Retrofit, Rest.
 
+Язык: Engish, Russian
+
 ![](Screenshot_1573399994.png)
 ![](Screenshot_1573399998.png)
 ![](Screenshot_1573400008.png)
