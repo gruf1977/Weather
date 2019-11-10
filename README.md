@@ -10,7 +10,7 @@
 
 В каждом дне разбивка прогноза каждые 3 часа.
 
-Интерфейс: Material Design, Fragments, Recicler
+Интерфейс: Material Design, Fragments, Recycler
 
 Интернет: Retrofit, Rest.
 
