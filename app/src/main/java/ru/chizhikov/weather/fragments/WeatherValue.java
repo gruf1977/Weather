@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import java.util.Objects;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ru.chizhikov.weather.DBHelper;
 import ru.chizhikov.weather.ItemEveryTime;
 import ru.chizhikov.weather.ItemViewAdapter;
 import ru.chizhikov.weather.R;
@@ -32,6 +34,7 @@ import static android.content.Context.MODE_PRIVATE;
 import static ru.chizhikov.weather.MainActivity.fab;
 
 public class WeatherValue extends Fragment {
+    private long timeCash = 3600000;
     private RecyclerView recyclerView;
     private RecyclerView recyclerViewBottom;
     private TextView tvTextViewWeather;
@@ -50,6 +53,7 @@ public class WeatherValue extends Fragment {
     private ArrayList<ItemEveryTime> data;
     private ArrayList<ArrayList> listEveryTimeOnDate;
     private ArrayList<ItemEveryTime> listOfObject;
+    private boolean dataFromdb = false;
 
     @Nullable
     @Override
@@ -90,30 +94,30 @@ public class WeatherValue extends Fragment {
 
     @SuppressLint("SetTextI18n")
     private void setWeatherValueOnDate(int dayPosition) {
-      try {
-        ArrayList listItemsEveryTimeForMenu = listEveryTimeOnDate.get(dayPosition);
-        int nowPos = 0;
-        if (dayPosition > 0) {
-            nowPos = 5;
-        }
-        ItemEveryTime itemEveryTimeForMenu =
-                (ItemEveryTime) listItemsEveryTimeForMenu.get(nowPos);
-        tvImageWeather.setImageResource(itemEveryTimeForMenu.getPicture());
-        tvTextData.setText(itemEveryTimeForMenu.getTime());
-        tvTextViewWeather.setText(getResources().getString(R.string.weatherIn)
-                + itemEveryTimeForMenu.getCityCountry());
-        tvTemperatureValue.setText(itemEveryTimeForMenu.getTemperature());
-        tvRainfallValue.setText(itemEveryTimeForMenu.getDescription() + "");
-        tvWindSpeed.setText(getResources().getString(R.string.windSpeed)
-                + itemEveryTimeForMenu.getSpeedWind()
-                + getResources().getString(R.string.windSpeedSymbol));
-        tvHumidity.setText(getResources().getString(R.string.humidity)
-                + itemEveryTimeForMenu.getHumidity() + getResources().getString(R.string.humiditySymbol));
-        tvAtmPressure.setText(getResources().getString(R.string.atmPressure)
-                + itemEveryTimeForMenu.getPressure() + getResources()
-                .getString(R.string.atmPressureSymbol));
-        setViewsVisible();
-        initRecyclerViewBottom(dayPosition);
+        try {
+            ArrayList listItemsEveryTimeForMenu = listEveryTimeOnDate.get(dayPosition);
+            int nowPos = 0;
+            if (dayPosition > 0) {
+                nowPos = 5;
+            }
+            ItemEveryTime itemEveryTimeForMenu =
+                    (ItemEveryTime) listItemsEveryTimeForMenu.get(nowPos);
+            tvImageWeather.setImageResource(itemEveryTimeForMenu.getPicture());
+            tvTextData.setText(itemEveryTimeForMenu.getTime());
+            tvTextViewWeather.setText(getResources().getString(R.string.weatherIn)
+                    + itemEveryTimeForMenu.getCityCountry());
+            tvTemperatureValue.setText(itemEveryTimeForMenu.getTemperature());
+            tvRainfallValue.setText(itemEveryTimeForMenu.getDescription() + "");
+            tvWindSpeed.setText(getResources().getString(R.string.windSpeed)
+                    + itemEveryTimeForMenu.getSpeedWind()
+                    + getResources().getString(R.string.windSpeedSymbol));
+            tvHumidity.setText(getResources().getString(R.string.humidity)
+                    + itemEveryTimeForMenu.getHumidity() + getResources().getString(R.string.humiditySymbol));
+            tvAtmPressure.setText(getResources().getString(R.string.atmPressure)
+                    + itemEveryTimeForMenu.getPressure() + getResources()
+                    .getString(R.string.atmPressureSymbol));
+            setViewsVisible();
+            initRecyclerViewBottom(dayPosition);
         } catch (Exception e){
             Toast.makeText(getContext(), R.string.Err, Toast.LENGTH_SHORT).show();
         }
@@ -146,6 +150,22 @@ public class WeatherValue extends Fragment {
     private void updateWeatherData() {
         final String uriLang = getResources().getString(R.string.uri);
         final String city = arraysCities[numPosition];
+        DBHelper dbHelper = new DBHelper(getContext());
+        ArrayList<ItemEveryTime> listFromDB = dbHelper.readWeatherInCityByCity(city);
+        if (listFromDB.size()>0) {
+            if (listFromDB.get(0).getTimeStamp() > System.currentTimeMillis()) {
+                dataFromdb = true;
+                Log.d("myLogs", "Выводим из БД");
+                printWeatherFromBD(listFromDB);
+                return;
+            } else {
+                dataFromdb = false;
+                dbHelper.deleteWeatherInCityByCity(city);
+                Log.d("myLogs", "Удаляем из БД");
+            }
+        }
+        dbHelper.close();
+        Log.d("myLogs", "Читаем из интернета");
         progressBar.setVisibility(View.VISIBLE);
         tvTextViewWeather.setText(getResources().getString(R.string.find_place)
                 + " " + arraysCities[numPosition]);
@@ -181,7 +201,40 @@ public class WeatherValue extends Fragment {
                 });
     }
 
+    private void printWeatherFromBD(ArrayList<ItemEveryTime> listFromDB) {
+        tvTextData.setVisibility(View.VISIBLE);
+        tvTextData.setText(listFromDB.get(0).getCityCountry());
+        listEveryTimeOnDate = new ArrayList<>();
+        data =  new ArrayList<>();
+        int j = -1;
+        String dateStrOld="";
+        for (int i= 0 ; i<listFromDB.size(); i++){
+            String[] dateStrTemp = listFromDB.get(i).getTime().split(" ");
+            if (!dateStrOld.equals(dateStrTemp[0])) {
+                if (j!=-1){
+                    listEveryTimeOnDate.add(listOfObject);
+                }
+                listOfObject = new ArrayList<>();
+                j++;
+                dateStrOld = dateStrTemp[0];
+            }
+            ItemEveryTime itemEveryTime = listFromDB.get(i);
+            listOfObject.add(itemEveryTime);
+            String strTimeWeather = "15:00:00";
+            if (i==0 && j==0){
+                data.add(itemEveryTime);
+            } else if (dateStrTemp[1].equals(strTimeWeather) && j!=0) {
+                data.add(itemEveryTime);
+            }
+        }
+        progressBar.setVisibility(View.GONE);
+        initRecyclerView();
+        initRecyclerViewBottom(dayPosition);
+        setWeatherValueOnDate(dayPosition);
+    }
+
     private void renderWeather(WeatherRequestRestModel model) {
+        ArrayList<ItemEveryTime> listWeatherForBD = new ArrayList();
         tvTextData.setVisibility(View.VISIBLE);
         tvTextData.setText(String.format("%s %s", model.city.nameCity, model.city.country));
         listEveryTimeOnDate = new ArrayList<>();
@@ -205,14 +258,17 @@ public class WeatherValue extends Fragment {
             {
                 strTemp = model.listRestModels[i].main.temp + "C" + (char) 176;
             }
-            ItemEveryTime itemEveryTime = new ItemEveryTime(model.listRestModels[i].dataTime,
+            ItemEveryTime itemEveryTime = new ItemEveryTime(model.city.nameCity,
+                    model.listRestModels[i].dataTime,
                     model.listRestModels[i].wind.speed,
                     model.listRestModels[i].main.pressure,
                     model.listRestModels[i].main.humidity,
                     model.listRestModels[i].weather[0].description,
                     strTemp,
                     setWeatherIcon(model.listRestModels[i].weather[0].id),
-                    model.city.nameCity + ", " + model.city.country);
+                    model.city.nameCity + ", " + model.city.country,
+                    System.currentTimeMillis()+ timeCash);
+            listWeatherForBD.add(itemEveryTime);
             listOfObject.add(itemEveryTime);
             String strTimeWeather = "15:00:00";
             if (i==0 && j==0){
@@ -221,6 +277,9 @@ public class WeatherValue extends Fragment {
                 data.add(itemEveryTime);
             }
         }
+        DBHelper dbHelper = new DBHelper(getContext());
+        dbHelper.writeListWeatherForBD(listWeatherForBD);
+        dbHelper.close();
         progressBar.setVisibility(View.GONE);
         initRecyclerView();
         initRecyclerViewBottom(dayPosition);
