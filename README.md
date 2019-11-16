@@ -16,7 +16,9 @@
 
 Язык: Engish, Russian
 
-![](Screenshot_1573399994.png)
-![](Screenshot_1573399998.png)
-![](Screenshot_1573400008.png)
-![](Screenshot_1573400020.png)
+![](screen1.png)
+![](screen2.png)
+![](screen3.png)
+![](screen4.png)
+![](screen5.png)
+![](screen6.png)
