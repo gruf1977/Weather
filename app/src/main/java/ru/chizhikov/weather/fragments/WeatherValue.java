@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,7 +111,8 @@ public class WeatherValue extends Fragment {
                     + itemEveryTimeForMenu.getSpeedWind()
                     + getResources().getString(R.string.windSpeedSymbol));
             tvHumidity.setText(getResources().getString(R.string.humidity)
-                    + itemEveryTimeForMenu.getHumidity() + getResources().getString(R.string.humiditySymbol));
+                    + itemEveryTimeForMenu.getHumidity()
+                    + getResources().getString(R.string.humiditySymbol));
             tvAtmPressure.setText(getResources().getString(R.string.atmPressure)
                     + itemEveryTimeForMenu.getPressure() + getResources()
                     .getString(R.string.atmPressureSymbol));
@@ -146,7 +146,6 @@ public class WeatherValue extends Fragment {
         updateWeatherData();
     }
 
-    @SuppressLint("SetTextI18n")
     private void updateWeatherData() {
         final String uriLang = getResources().getString(R.string.uri);
         final String city = arraysCities[numPosition];
@@ -155,21 +154,24 @@ public class WeatherValue extends Fragment {
         if (listFromDB.size()>0) {
             if (listFromDB.get(0).getTimeStamp() > System.currentTimeMillis()) {
                 dataFromdb = true;
-                Log.d("myLogs", "Выводим из БД");
                 printWeatherFromBD(listFromDB);
                 return;
             } else {
                 dataFromdb = false;
                 dbHelper.deleteWeatherInCityByCity(city);
-                Log.d("myLogs", "Удаляем из БД");
             }
         }
         dbHelper.close();
-        Log.d("myLogs", "Читаем из интернета");
+        readWeatherFromInternet(uriLang, city);
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void readWeatherFromInternet(String uriLang, String city) {
         progressBar.setVisibility(View.VISIBLE);
         tvTextViewWeather.setText(getResources().getString(R.string.find_place)
                 + " " + arraysCities[numPosition]);
         tvTextViewWeather.setVisibility(View.VISIBLE);
+
         OpenWeatherRepo.getSingleton().getAPI().loadWeather(city, uriLang,
                 "metric", "f3f2763fe63803beef4851d6365c83bc")
                 .enqueue(new Callback<WeatherRequestRestModel>() {
@@ -254,8 +256,7 @@ public class WeatherValue extends Fragment {
             String strTemp;
             if (model.listRestModels[i].main.temp>0){
                 strTemp = "+" + model.listRestModels[i].main.temp + "C" + (char) 176;
-            } else
-            {
+            } else {
                 strTemp = model.listRestModels[i].main.temp + "C" + (char) 176;
             }
             ItemEveryTime itemEveryTime = new ItemEveryTime(model.city.nameCity,

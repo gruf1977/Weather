@@ -35,13 +35,13 @@ public class ItemViewAdapter extends RecyclerView.Adapter<ItemViewAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ItemEveryTime everyTimex = (ItemEveryTime) everyTime.get(position);
-        holder.imageView.setImageResource(everyTimex.picture);
-        holder.textViewTemperature.setText(everyTimex.temperature);
-        holder.textViewDescription.setText(everyTimex.description);
-        holder.textViewHumidity.setText(everyTimex.humidity + "");
-        holder.textViewPressure.setText(everyTimex.pressure +"");
-        holder.textViewSpeedWind.setText(everyTimex.speedWind +"");
-        holder.textViewTime.setText(everyTimex.time);
+        holder.imageView.setImageResource(everyTimex.getPicture());
+        holder.textViewTemperature.setText(everyTimex.getTemperature());
+        holder.textViewDescription.setText(everyTimex.getDescription());
+        holder.textViewHumidity.setText(everyTimex.getHumidity() + "");
+        holder.textViewPressure.setText(everyTimex.getPressure() +"");
+        holder.textViewSpeedWind.setText(everyTimex.getSpeedWind() +"");
+        holder.textViewTime.setText(everyTimex.getTime());
     }
 
     @Override

@@ -3,29 +3,28 @@ package ru.chizhikov.weather.rest;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class OpenWeatherRepo {
+public class CityRepo {
 
-    private static OpenWeatherRepo singleton = null;
-    private IOpenWeather API;
-    private OpenWeatherRepo() {
+    private static CityRepo singleton = null;
+    private IOpenCity API;
+    private CityRepo() {
         API = createAdapter();
     }
-    public static OpenWeatherRepo getSingleton() {
+    public static CityRepo getSingleton() {
         if(singleton == null) {
-            singleton = new OpenWeatherRepo();
+            singleton = new CityRepo();
         }
         return singleton;
     }
-
-    public IOpenWeather getAPI() {
+    public IOpenCity getAPI() {
         return API;
     }
 
-    private IOpenWeather createAdapter() {
+    private IOpenCity createAdapter() {
         Retrofit adapter = new Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        return adapter.create(IOpenWeather.class);
+        return adapter.create(IOpenCity.class);
     }
 }
