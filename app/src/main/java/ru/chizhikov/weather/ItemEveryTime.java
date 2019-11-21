@@ -1,14 +1,14 @@
 package ru.chizhikov.weather;
 
 public class ItemEveryTime {
-    String city;
-    String time;
-    float speedWind;
-    int pressure;
-    int humidity;
-    String description;
-    String temperature;
-    int picture;
+    private String city;
+    private String time;
+    private float speedWind;
+    private int pressure;
+    private int humidity;
+    private String description;
+    private String temperature;
+    private int picture;
     private String cityCountry;
     private long timeStamp;
 

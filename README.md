@@ -14,6 +14,8 @@
 
 Интернет: Retrofit, Rest.
 
+Так же используется геолокация
+
 Язык: Engish, Russian
 
 ![](screen1.png)

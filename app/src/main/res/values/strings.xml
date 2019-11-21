@@ -65,7 +65,8 @@
     <string name="send_email_title">Send mail...</string>
     <string name="check_email_data">Check that the data entered is correct</string>
     <string name="no_internet">No Internet connection</string>
-
+    <string name="you_in">You in</string>
+    <string name="add_this_place">Add this place to the list?</string>
     <string name="about_app_text">
         We are glad, that you have chosen our weather forecast analysis app.
         Our app broadcasts weather information from the OpenWeatherMap service. \n

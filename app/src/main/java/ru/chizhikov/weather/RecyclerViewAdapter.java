@@ -33,9 +33,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ItemEveryTime dataPosition = data.get(position);
-        holder.imageView.setImageResource(dataPosition.picture);
-        holder.textViewTemperature.setText(dataPosition.temperature);
-        String[] datePositionString = dataPosition.time.split(" ");
+        holder.imageView.setImageResource(dataPosition.getPicture());
+        holder.textViewTemperature.setText(dataPosition.getTemperature());
+        String[] datePositionString = dataPosition.getTime().split(" ");
         holder.textViewCalendar.setText(datePositionString[0]);
     }
 

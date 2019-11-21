@@ -59,6 +59,8 @@
         Проверьте название местности.</string>
     <string name="no_internet">Нет подключения к интернет</string>
     <string name="find_place">Кручу глобус ищу… \n  погоду в </string>
+    <string name="you_in">Вы в</string>
+    <string name="add_this_place">Добить это место в список?</string>
     <string name="about_app_text">Мы рады, что вы выбрали
         наше приложение для анализа прогноза погоды.
         Наше приложение транслирует информацию о погоде с сервиса OpenWeatherMap.\n

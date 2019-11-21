@@ -26,7 +26,6 @@ import ru.chizhikov.weather.fragments.RedactorListCitiesFragment;
 import ru.chizhikov.weather.fragments.TemperAtUserFragment;
 import ru.chizhikov.weather.fragments.WeatherValue;
 
-
 public class MainActivity extends AppCompatActivity implements OnSelectedPositionCity,
         NavigationView.OnNavigationItemSelectedListener {
 
@@ -132,7 +131,6 @@ public class MainActivity extends AppCompatActivity implements OnSelectedPositio
 
     private void initSaveInstanceState(Bundle savedInstanceState) {
         if (savedInstanceState == null && lastSaveIndex == -1) {
-
             numberPositionTemp = 0;
             setFragmentToMainContainer(listOfCities);
 
@@ -165,7 +163,6 @@ public class MainActivity extends AppCompatActivity implements OnSelectedPositio
     public static void setNumberPositionTemp(int numberPositionTemp) {
         MainActivity.numberPositionTemp = numberPositionTemp;
     }
-
 
     @Override
     public void onBackPressed() {
